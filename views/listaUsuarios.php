@@ -10,7 +10,8 @@ foreach ($usuarios as $usuario) :  ?>
       ID: <?= $usuario['id']; ?> | 
       Nome: <?= $usuario['nome']; ?> | 
       Email: <?= $usuario['email']; ?> | 
-      <a href="../src/excloiUsuario.php?id=<?= $usuario['id']; ?>">Excluir</a>
+      <a href="../src/excloiUsuario.php?id=<?= $usuario['id']; ?>">Excluir</a> |
+      <a href="./editaUsuarioForm.php?id=<?= $usuario['id']; ?>">Editar</a>
     </p>
 
 <?php endforeach; ?>

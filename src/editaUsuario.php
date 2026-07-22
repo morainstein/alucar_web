@@ -5,11 +5,12 @@ include_once __DIR__ . '/../funcoes.php';
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-
-$senha_hash = password_hash($senha, PASSWORD_ARGON2I);
+$id = $_POST['id'];
 
 $pdo = conn();
 
-$pdo->query("INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha_hash')");
+$sql = "UPDATE usuarios SET nome = '$nome', email = '$email', senha = '$senha' WHERE id = '$id'";
+
+$pdo->query($sql);
 
 header('Location: ../views/dashboard.php');
